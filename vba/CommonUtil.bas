@@ -2,7 +2,7 @@ Attribute VB_Name = "CommonUtil"
 
 '**************************************************
 '**
-'** ·µ»Ø EG, SH, SP, SF, B, M, AÖ®Ò»
+'** è¿”å› EG, SH, SP, SF, B, M, Aä¹‹ä¸€
 '**
 '**************************************************
 Public Function getLayer(trans As String) As String
@@ -19,7 +19,7 @@ Public Function getLayer(trans As String) As String
 End Function
 
 
-' Î´ÆôÓÃ
+' æœªå¯ç”¨
 Public Function getLayer_new(trans As String) As String
 
     'e.g. azkpan.sh -rep="MyKettleRepository" -trans=TRANS_4_S_PL_CRM_INTOPIECES_DK_H -dir=/hcdw/ods/StdLayer/ktr/daily -user=lujx -pass=lujx
@@ -149,7 +149,7 @@ Public Function makeCMD2(REP As String, _
     
     '***************************************************************
     '*
-    '* °ÑĞèÒªÓÃlooppan.shµ÷¶ÈµÄ·ÅÔÚÕâÀï Éú²ú»·¾³Ê±ĞèÒª×¢ÊÍµô
+    '* æŠŠéœ€è¦ç”¨looppan.shè°ƒåº¦çš„æ”¾åœ¨è¿™é‡Œ ç”Ÿäº§ç¯å¢ƒæ—¶éœ€è¦æ³¨é‡Šæ‰
     '*
     '***************************************************************
     Dim LOOPPAN_SH_LIST As Object
@@ -195,7 +195,7 @@ End Function
 
 '**************************************************
 '**
-'** Éú³ÉJOBÎÄ¼ş¶ÔÓ¦µÄÄÚÈİ£¨·ÏÆú2015/10/16£©
+'** ç”ŸæˆJOBæ–‡ä»¶å¯¹åº”çš„å†…å®¹ï¼ˆåºŸå¼ƒ2015/10/16ï¼‰
 '**
 '**************************************************
 Public Function makeJOB_old(cmt As String, _
@@ -225,9 +225,9 @@ End Function
 '**************************************************
 '**
 '**
-'** Éú³ÉJOBÎÄ¼ş¶ÔÓ¦µÄÄÚÈİ
+'** ç”ŸæˆJOBæ–‡ä»¶å¯¹åº”çš„å†…å®¹
 '**
-'** 2015/10/16 ĞŞ¸Ä £º ĞÂÔö²ÎÊıc£º±»ÒÀÀµµÄÈÎÎñÁĞ±í
+'** 2015/10/16 ä¿®æ”¹ ï¼š æ–°å¢å‚æ•°cï¼šè¢«ä¾èµ–çš„ä»»åŠ¡åˆ—è¡¨
 '**
 '**************************************************
 Public Function makeJOB(trans As String, _
@@ -254,7 +254,7 @@ Public Function makeJOB(trans As String, _
             
             For Each o In c
                 
-                ' ¹ıÂËµô""
+                ' è¿‡æ»¤æ‰""
                 If o <> "" Then
                 
                         If Left(o, 1) <> "#" Then
@@ -263,7 +263,7 @@ Public Function makeJOB(trans As String, _
                         
                         Else
                         
-                            ' È¡×îºóÒ»´Î#¿ªÍ·µÄÄÚÈİ×÷Îª×¢ÊÍ
+                            ' å–æœ€åä¸€æ¬¡#å¼€å¤´çš„å†…å®¹ä½œä¸ºæ³¨é‡Š
                             cmt = o
                         
                         End If
@@ -273,7 +273,7 @@ Public Function makeJOB(trans As String, _
         
         'Debug.Print dep & deplist
                 
-        ' È¥µô¶àÓàµÄ¶ººÅ
+        ' å»æ‰å¤šä½™çš„é€—å·
         'deplist = Switch(LEFT(dep & deplist, 1) = ",", Mid(dep & deplist, 2), LEFT(dep & deplist, 1) <> ",", dep & deplist)
         deplist = trimComma(dep & deplist)
         
@@ -329,7 +329,7 @@ Public Sub package(ByVal sdir As String, rardir As String, suffix As String)
     
     ' cmd /c "C:\Program Files (x86)\WinRAR\RAR.exe" a D:\tmp\20150909_azk2proc\20150909_azk2proc.zip D:\tmp\20150909_azk2proc\*.job
     
-    ' ÁÙÊ±ÎÄ¼şbat
+    ' ä¸´æ—¶æ–‡ä»¶bat
     'Shell "cmd /c echo @cd /d " & sdir & " >  " & sdir & "\rartest.bat"
     
     'D:\tmp\20151218_azk2procv2>"C:\Program Files (x86)\WinRAR\WinRAR.exe" a -afzip zipfile *.job
@@ -358,7 +358,7 @@ Public Sub package(ByVal sdir As String, rardir As String, suffix As String)
     
     Set objTXTFO = Nothing
     
-    ' ÔËĞĞbatÎÄ¼ş
+    ' è¿è¡Œbatæ–‡ä»¶
     cmd = sdir & "\rartest.bat"
     
     ' cmd = "cmd /c """ & rardir & "\RAR.exe"" a " & sdir & "\" & str(i) & "." & suffix & " " & sdir & "\*.job"
@@ -397,7 +397,7 @@ End Function
 
 '**************************************************
 '*
-'* ×Ô¶¨Òåº¯Êı£º´«ÈëunixÊ±¼ä´Á£¬·µ»ØÊ±¼ä(stringĞÍ)
+'* è‡ªå®šä¹‰å‡½æ•°ï¼šä¼ å…¥unixæ—¶é—´æˆ³ï¼Œè¿”å›æ—¶é—´(stringå‹)
 '*
 '**************************************************
 Public Function from_unixtime(ran As Range) As String
@@ -410,13 +410,13 @@ Public Function from_unixtime(ran As Range) As String
     
     from_unixtime = Format(dtVal, "yyyy-mm-dd")
     
-    ' Ò²¿ÉÒÔ·µ»ØdateÀàĞÍ£¬ĞèÒªÇ°¶ÎÉèÖÃÏÂÏÖÊµ¸ñÊ½
+    ' ä¹Ÿå¯ä»¥è¿”å›dateç±»å‹ï¼Œéœ€è¦å‰æ®µè®¾ç½®ä¸‹ç°å®æ ¼å¼
     
 End Function
 
 '**************************************************
 '*
-'* trimµô¶ººÅ£¬Ä¬ÈÏÊÇ×ócomma
+'* trimæ‰é€—å·ï¼Œé»˜è®¤æ˜¯å·¦comma
 '*
 '**************************************************
 Public Function trimComma(s As String, Optional posflag As Byte = tcLEFT) As String
@@ -436,10 +436,10 @@ Public Function trimComma(s As String, Optional posflag As Byte = tcLEFT) As Str
         
         Case tcBOTH
         
-            ' ÏÈtrimµô×ó±ß
+            ' å…ˆtrimæ‰å·¦è¾¹
             t = LTrimComma(s)
             
-            ' ÔÚ·´×ª£¬trimµô×ó±ß£¨´ËÊ±ÊÇÔ´sµÄÓÒ±ß£©
+            ' åœ¨åè½¬ï¼Œtrimæ‰å·¦è¾¹ï¼ˆæ­¤æ—¶æ˜¯æºsçš„å³è¾¹ï¼‰
              trimComma = StrReverse(LTrimComma(StrReverse(t)))
         
         Case Else
@@ -450,7 +450,7 @@ Public Function trimComma(s As String, Optional posflag As Byte = tcLEFT) As Str
     
 End Function
 
-''' ½«×ó±ßµÄ¶ººÅ¸øtrimµô
+''' å°†å·¦è¾¹çš„é€—å·ç»™trimæ‰
 Public Function LTrimComma(s As String) As String
     
     Dim i As Integer, slen As Integer
@@ -467,7 +467,7 @@ Public Function LTrimComma(s As String) As String
     
          Char = Mid(s, i, 1)
          
-         ' µÚÒ»´ÎÓöµ½·Çcomma£¬Éè¶¨skipÎªtrue£¬¼´£ºÌø¹ıÅĞ¶Ï£¬´Ó´Ë²»ÔÙĞŞ¸ÄskipµÄÖµ
+         ' ç¬¬ä¸€æ¬¡é‡åˆ°écommaï¼Œè®¾å®šskipä¸ºtrueï¼Œå³ï¼šè·³è¿‡åˆ¤æ–­ï¼Œä»æ­¤ä¸å†ä¿®æ”¹skipçš„å€¼
          If Char <> "," Then
             
             skip = True
@@ -476,7 +476,7 @@ Public Function LTrimComma(s As String) As String
             
          End If
          
-         ' ´ÓskipÎªtrue¿ªÊ¼£¬ÀÛ¼Ó×Ö·û
+         ' ä»skipä¸ºtrueå¼€å§‹ï¼Œç´¯åŠ å­—ç¬¦
          'If skip Then
          '   val = val & char
          'End If
@@ -494,17 +494,17 @@ Public Function quota(s As Variant, Optional mark As String = """") As String
 
 End Function
 
-' ÕÒÉÏÓÎ
+' æ‰¾ä¸Šæ¸¸
 Private Function findDep(trans As String, ByRef ws As Worksheet) As Collection
 
     Dim cur_sheet As Worksheet
     
     Set cur_sheet = ws
     
-    ' ¼ÆÊı±äÁ¿
+    ' è®¡æ•°å˜é‡
     Dim i As Integer
     
-    Dim obj As Variant, dep As Variant, desc As Variant ' ÁÙÊ±±äÁ¿£¬¼ÇÂ¼Ã¿ĞĞ¶ÁÈ¡µÄtransºÍÆäÒÀÀµtrans
+    Dim obj As Variant, dep As Variant, desc As Variant ' ä¸´æ—¶å˜é‡ï¼Œè®°å½•æ¯è¡Œè¯»å–çš„transå’Œå…¶ä¾èµ–trans
     
     Dim c1 As New Collection
     
@@ -513,15 +513,15 @@ Private Function findDep(trans As String, ByRef ws As Worksheet) As Collection
     
     Do While cur_sheet.Cells(i, 1) <> ""
         
-            obj = cur_sheet.Cells(i, 1).Value  ' transÃû×Ö
-            dep = cur_sheet.Cells(i, 2).Value  ' ÒÀÀµµÄtransÃû
+            obj = cur_sheet.Cells(i, 1).Value  ' transåå­—
+            dep = cur_sheet.Cells(i, 2).Value  ' ä¾èµ–çš„transå
         
             
             If obj = trans Then
                 c1.Add (dep)
             End If
              
-            ' Ö¸ÏòÏÂÒ»ÕÅ±í
+            ' æŒ‡å‘ä¸‹ä¸€å¼ è¡¨
             i = i + 1
                 
     Loop
@@ -532,18 +532,18 @@ Private Function findDep(trans As String, ByRef ws As Worksheet) As Collection
     
 End Function
 
-' ÕÒÏÂÓÎ
-' ÕÒ²»µ½Ê±·µ»Ø³¤¶ÈÎª0µÄ¼¯ºÏ
+' æ‰¾ä¸‹æ¸¸
+' æ‰¾ä¸åˆ°æ—¶è¿”å›é•¿åº¦ä¸º0çš„é›†åˆ
 Public Function findDeped(trans As String, ByRef ws As Worksheet) As Collection
 
     Dim cur_sheet As Worksheet
     
     Set cur_sheet = ws
     
-    ' ¼ÆÊı±äÁ¿
+    ' è®¡æ•°å˜é‡
     Dim i As Integer
     
-    Dim obj As Variant, dep As Variant, desc As Variant ' ÁÙÊ±±äÁ¿£¬¼ÇÂ¼Ã¿ĞĞ¶ÁÈ¡µÄtransºÍÆäÒÀÀµtrans
+    Dim obj As Variant, dep As Variant, desc As Variant ' ä¸´æ—¶å˜é‡ï¼Œè®°å½•æ¯è¡Œè¯»å–çš„transå’Œå…¶ä¾èµ–trans
     
     Dim c1 As New Collection
     
@@ -552,15 +552,15 @@ Public Function findDeped(trans As String, ByRef ws As Worksheet) As Collection
     
     Do While cur_sheet.Cells(i, 1) <> ""
         
-            obj = cur_sheet.Cells(i, 1).Value  ' transÃû×Ö
-            dep = cur_sheet.Cells(i, 2).Value  ' ÒÀÀµµÄtransÃû
+            obj = cur_sheet.Cells(i, 1).Value  ' transåå­—
+            dep = cur_sheet.Cells(i, 2).Value  ' ä¾èµ–çš„transå
         
-            ' ÒÀÀµ¹ØÏµºÍ²ÎÊıÒ»ÖÂÊ±
+            ' ä¾èµ–å…³ç³»å’Œå‚æ•°ä¸€è‡´æ—¶
             If dep = trans Then
                 c1.Add (obj)
             End If
              
-            ' Ö¸ÏòÏÂÒ»ÕÅ±í
+            ' æŒ‡å‘ä¸‹ä¸€å¼ è¡¨
             i = i + 1
                 
     Loop
@@ -584,7 +584,7 @@ Private Function findNext(trans As String, ws As Worksheet, Optional ByRef D As 
         Set D = CreateObject("Scripting.Dictionary")
      End If
     
-    ' ½«µ±ÆÚµÄtrans·ÅÈë¼ìË÷¼¯ºÏ
+    ' å°†å½“æœŸçš„transæ”¾å…¥æ£€ç´¢é›†åˆ
     D.Add trans, BLANK
     Debug.Print WorksheetFunction.Rept(">", 2) & trans
                     
@@ -595,7 +595,7 @@ Private Function findNext(trans As String, ws As Worksheet, Optional ByRef D As 
     
         For Each o In dep
             
-            ' Èç¹ûÒÑ¾­ÒÀÀµ¹ıÒ»´Î£¬±ã¿ÉÅĞ¶¨ÖØ¸´ÒÀÀµ
+            ' å¦‚æœå·²ç»ä¾èµ–è¿‡ä¸€æ¬¡ï¼Œä¾¿å¯åˆ¤å®šé‡å¤ä¾èµ–
             If D.Exists(o) Then
             
                 findNext = True
@@ -608,10 +608,10 @@ Private Function findNext(trans As String, ws As Worksheet, Optional ByRef D As 
             '    Debug.Print k
             'Next
             
-             ' ÕÒµ½ÒÀÀµ¹ØÏµµÄ»°£¬ÔÙ´ÎÍùÏÂÕÒ£¨µİ¹é£©
+             ' æ‰¾åˆ°ä¾èµ–å…³ç³»çš„è¯ï¼Œå†æ¬¡å¾€ä¸‹æ‰¾ï¼ˆé€’å½’ï¼‰
              r = findNext(CStr(o), ws, D)
              
-             ' ÕÒµ½ºóÖ±½ÓÍË³öÑ­»·£¬²»ÔÙ¼ÌĞø
+             ' æ‰¾åˆ°åç›´æ¥é€€å‡ºå¾ªç¯ï¼Œä¸å†ç»§ç»­
              'If r Then
              '   Exit For
              'End If
@@ -638,7 +638,7 @@ Private Function findPrevious(trans As String, ws As Worksheet, Optional ByRef D
         Set D = CreateObject("Scripting.Dictionary")
      End If
     
-    ' ½«µ±ÆÚµÄtrans·ÅÈë¼ìË÷¼¯ºÏ
+    ' å°†å½“æœŸçš„transæ”¾å…¥æ£€ç´¢é›†åˆ
     ' d.Add trans, BLANK
     Debug.Print WorksheetFunction.Rept("> ", 2) & trans
                     
@@ -660,7 +660,7 @@ Private Function findPrevious(trans As String, ws As Worksheet, Optional ByRef D
             '    Debug.Print k
             'Next
                 
-             ' ÕÒµ½ÒÀÀµ¹ØÏµµÄ»°£¬ÔÙ´ÎÍùÏÂÕÒ£¨µİ¹é£©
+             ' æ‰¾åˆ°ä¾èµ–å…³ç³»çš„è¯ï¼Œå†æ¬¡å¾€ä¸‹æ‰¾ï¼ˆé€’å½’ï¼‰
              r = findPrevious(CStr(o), ws, D)
              
              
@@ -672,23 +672,23 @@ Private Function findPrevious(trans As String, ws As Worksheet, Optional ByRef D
 
 End Function
 
-' ÊÇ·ñÑ­»·ÒÀÀµ
+' æ˜¯å¦å¾ªç¯ä¾èµ–
 Public Function isCircleDep(trans As String, ws As Worksheet) As Boolean
 
     isCircleDep = findNext(trans, ws)
     
 End Function
 
-' ÊÇ·ñÑ­»·ÒÀÀµ
+' æ˜¯å¦å¾ªç¯ä¾èµ–
 Public Function checkHead(trans As String, ws As Worksheet) As Boolean
 
     checkHead = findPrevious(trans, ws)
     
 End Function
 
-' ½¨Á¢Íê³ÉµÄÒÀÀµ¹ØÏµÊ±£¬°ÑÄÇĞ©´ÓÎ´±»ÒÀÀµµÄÈÎÎñÕÒ³öÀ´
+' å»ºç«‹å®Œæˆçš„ä¾èµ–å…³ç³»æ—¶ï¼ŒæŠŠé‚£äº›ä»æœªè¢«ä¾èµ–çš„ä»»åŠ¡æ‰¾å‡ºæ¥
 '
-' ±éÀúËùÓĞ×ó²àµÄÈÎÎñ£¬²é¿´Æä"ÔÚ"ÓÒ²à£¨ÓĞÏÂÓÎ¡¢±»ÒÀÀµ£©ÊÇ·ñ´æÔÚ£¬°ÑËùÓĞÃ»ÓĞ±»ÒÀÀµ£¨Ã»ÓĞÏÂÓÎ£©µÄÈÎÎñ·µ»Ø
+' éå†æ‰€æœ‰å·¦ä¾§çš„ä»»åŠ¡ï¼ŒæŸ¥çœ‹å…¶"åœ¨"å³ä¾§ï¼ˆæœ‰ä¸‹æ¸¸ã€è¢«ä¾èµ–ï¼‰æ˜¯å¦å­˜åœ¨ï¼ŒæŠŠæ‰€æœ‰æ²¡æœ‰è¢«ä¾èµ–ï¼ˆæ²¡æœ‰ä¸‹æ¸¸ï¼‰çš„ä»»åŠ¡è¿”å›
 '
 Public Function getNeverDependencyTaskList(ByRef ws As Worksheet) As Object
 
@@ -696,20 +696,20 @@ Public Function getNeverDependencyTaskList(ByRef ws As Worksheet) As Object
     
     Set cur_sheet = ws
     
-    ' ¼ÆÊı±äÁ¿
+    ' è®¡æ•°å˜é‡
     Dim i As Integer, j As Integer, k As Integer
     
     Dim obj As Variant
     
     Set hcdw = CreateObject("Scripting.Dictionary")
     
-    i = 6 ' ´ÓµÚÁù¸ö¿ªÊ¼ÕÒ
+    i = 6 ' ä»ç¬¬å…­ä¸ªå¼€å§‹æ‰¾
     
     j = i - 2
     
     Do While cur_sheet.Cells(i, 1) <> "" And UCase(cur_sheet.Cells(i, 1)) <> "END"
         
-            obj = cur_sheet.Cells(i, 1).Value  ' transÃû×Ö
+            obj = cur_sheet.Cells(i, 1).Value  ' transåå­—
          
             If Not isDependTask(CStr(obj), ws) Then
             
@@ -721,7 +721,7 @@ Public Function getNeverDependencyTaskList(ByRef ws As Worksheet) As Object
             
             End If
              
-            ' Ö¸ÏòÏÂÒ»ÕÅ±í
+            ' æŒ‡å‘ä¸‹ä¸€å¼ è¡¨
             i = i + 1
             j = j + 1
                 
@@ -731,14 +731,14 @@ Public Function getNeverDependencyTaskList(ByRef ws As Worksheet) As Object
 
 End Function
 
-' ²éÕÒµ±Ç°ÔªËØÔÚÓÒ²àÊÇ·ñ´æÔÚ / ÊÇ·ñ±»ÒÀÀµ / ÊÇ·ñÔÚÉÏÓÎ / ÊÇ·ñÔÚÓÒ²à / ÊÇ·ñ»¹ÓĞÏÂÓÎ
+' æŸ¥æ‰¾å½“å‰å…ƒç´ åœ¨å³ä¾§æ˜¯å¦å­˜åœ¨ / æ˜¯å¦è¢«ä¾èµ– / æ˜¯å¦åœ¨ä¸Šæ¸¸ / æ˜¯å¦åœ¨å³ä¾§ / æ˜¯å¦è¿˜æœ‰ä¸‹æ¸¸
 Public Function isDependTask(task As String, ByRef ws As Worksheet) As Boolean
 
     Dim cur_sheet As Worksheet
     
     Set cur_sheet = ws
     
-    ' ¼ÆÊı±äÁ¿
+    ' è®¡æ•°å˜é‡
     Dim i As Integer
     
     i = 6
@@ -751,7 +751,7 @@ Public Function isDependTask(task As String, ByRef ws As Worksheet) As Boolean
             End If
 
              
-            ' Ö¸ÏòÏÂÒ»ÕÅ±í
+            ' æŒ‡å‘ä¸‹ä¸€å¼ è¡¨
             i = i + 1
                 
     Loop
@@ -762,20 +762,20 @@ End Function
 
 '*********************************************************************************************************
 '
-' ÓÃÕÒÉÏÓÎµÄ·½Ê½¶ÁÈ¡Ö¸¶¨µÄworksheet£¬ÀûÓÃ±í¸ñÊı¾İÃèÊöµÄÒÀÀµ¹ØÏµ£¬½¨Á¢ÆğÁÚ½Ó±í£¬±¾º¯Êı×Ô´ø¼ì²éÊÇ·ñÓĞ×ÔÑ­»·¹¦ÄÜ
-' ¼ÙÉèAÒÀÀµB£¬Ôò±íÊ¾Îª [ A -> B ](!!!¶ø²»ÊÇ[ B -> A ]!!!)
+' ç”¨æ‰¾ä¸Šæ¸¸çš„æ–¹å¼è¯»å–æŒ‡å®šçš„worksheetï¼Œåˆ©ç”¨è¡¨æ ¼æ•°æ®æè¿°çš„ä¾èµ–å…³ç³»ï¼Œå»ºç«‹èµ·é‚»æ¥è¡¨ï¼Œæœ¬å‡½æ•°è‡ªå¸¦æ£€æŸ¥æ˜¯å¦æœ‰è‡ªå¾ªç¯åŠŸèƒ½
+' å‡è®¾Aä¾èµ–Bï¼Œåˆ™è¡¨ç¤ºä¸º [ A -> B ](!!!è€Œä¸æ˜¯[ B -> A ]!!!)
 '_____________________________________________________________________________________________
 '
-' ¡¾AdjacencyList Graph = ÁÚ½Ó±í ´æ´¢ÒÀÀµ¹ØÏµ¡¿
+' ã€AdjacencyList Graph = é‚»æ¥è¡¨ å­˜å‚¨ä¾èµ–å…³ç³»ã€‘
 '
-' Dict - key ----- value (Dict)                  <==> key -> value ±íÊ¾keyÒÀÀµ£¨ÓÚ£©value
+' Dict - key ----- value (Dict)                  <==> key -> value è¡¨ç¤ºkeyä¾èµ–ï¼ˆäºï¼‰value
 '        key1 --   Dict1(<d1,blank>,<d2,blank>)
 '        key2 --   Dict2(<d3,blank>,<d4,blank>)
 '        key3 --   Dict3(<d5,blank>           )
 '_____________________________________________________________________________________________
 '
-' trans --- ×îÖÕÒÀÀµµã£¬Èç¹û¶ÔÕûÌåÒÀÀµ¹ØÏµ½¨Á¢ÁÚ½Ó±í£¨¼ÙÉèÒÀÀµ¹ØÏµÕıÈ·ÎŞÎó£©£¬ÖµÎª¡ºEND¡»
-' ws    --- Òª¶ÁÈ¡µÄÒÀÀµ¹ØÏµËùÔÚ±í¸ñ
+' trans --- æœ€ç»ˆä¾èµ–ç‚¹ï¼Œå¦‚æœå¯¹æ•´ä½“ä¾èµ–å…³ç³»å»ºç«‹é‚»æ¥è¡¨ï¼ˆå‡è®¾ä¾èµ–å…³ç³»æ­£ç¡®æ— è¯¯ï¼‰ï¼Œå€¼ä¸ºã€ENDã€
+' ws    --- è¦è¯»å–çš„ä¾èµ–å…³ç³»æ‰€åœ¨è¡¨æ ¼
 '
 '*********************************************************************************************************
 Public Function buildAdjaGraph(trans As String, ws As Worksheet, Optional ByRef D As Object = Nothing, Optional ByRef counter As Object = Nothing) As Object
@@ -792,21 +792,21 @@ Public Function buildAdjaGraph(trans As String, ws As Worksheet, Optional ByRef 
         Set D = CreateObject("Scripting.Dictionary")
      End If
      
-    ' counter Ö»ÓÃÀ´ÅĞ¶ÏÊÇ·ñ²úÉú×ÔÑ­»·µÄÇé¿ö
+    ' counter åªç”¨æ¥åˆ¤æ–­æ˜¯å¦äº§ç”Ÿè‡ªå¾ªç¯çš„æƒ…å†µ
     If counter Is Nothing Then
         Set counter = CreateObject("Scripting.Dictionary")
         counter.Add "counter", 0
         counter.Add "b1", False
         counter.Add "b2", False
         counter.Add "circle", True ' no use
-        counter.Add "conter2", 0 ' Á¬Ğø²»ÓÃ¡ºĞÂÔöµÄ¡»µİ¹é´ÎÊı
-        counter.Add "continueFlg", False ' Á¬Ğø²»ĞÂÔöflag
+        counter.Add "conter2", 0 ' è¿ç»­ä¸ç”¨ã€æ–°å¢çš„ã€é€’å½’æ¬¡æ•°
+        counter.Add "continueFlg", False ' è¿ç»­ä¸æ–°å¢flag
      End If
      
     counter.Item("b1") = False
     counter.Item("b2") = False
     
-    ' ½«µ±ÆÚµÄtrans·ÅÈë¼ìË÷¼¯ºÏ
+    ' å°†å½“æœŸçš„transæ”¾å…¥æ£€ç´¢é›†åˆ
     If Not D.Exists(trans) Then
       D.Add trans, CreateObject("Scripting.Dictionary")
       ' Debug.Print (" >> " & trans)
@@ -841,14 +841,14 @@ Public Function buildAdjaGraph(trans As String, ws As Worksheet, Optional ByRef 
             End If
             ' Debug.Print (" >>> " & o)
             
-            'Á¬Ğø¡º²»ĞÂÔö¡»Ê±£¬1++£¬·ñÔò³õÊ¼»¯³É0»òÕß1
+            'è¿ç»­ã€ä¸æ–°å¢ã€æ—¶ï¼Œ1++ï¼Œå¦åˆ™åˆå§‹åŒ–æˆ0æˆ–è€…1
             If counter.Item("b1") And counter.Item("b2") And counter.Item("continueFlg") Then
                 counter.Item("counter2") = counter.Item("counter2") + 1
             Else
                 counter.Item("counter2") = (counter.Item("b1") And counter.Item("b2")) * -1
             End If
             
-            ' ±¾´Î¡º²»ĞÂÔö¡»·¢ÉúÊ±£¬½«continueflgÖÃtrue
+            ' æœ¬æ¬¡ã€ä¸æ–°å¢ã€å‘ç”Ÿæ—¶ï¼Œå°†continueflgç½®true
             If counter.Item("b1") And counter.Item("b2") Then
             
                 counter.Item("continueFlg") = True
@@ -859,7 +859,7 @@ Public Function buildAdjaGraph(trans As String, ws As Worksheet, Optional ByRef 
                 
             End If
             
-            ' ²úÉúCircleµÄÌõ¼ş£º´ËÊ±ÒªÍ£Ö¹Circle£¬ÍË³öµİ¹é
+            ' äº§ç”ŸCircleçš„æ¡ä»¶ï¼šæ­¤æ—¶è¦åœæ­¢Circleï¼Œé€€å‡ºé€’å½’
             'If counter.Item("counter") > 99 Then
             
             '    If counter.Item("circle") Then
@@ -888,7 +888,7 @@ Public Function buildAdjaGraph(trans As String, ws As Worksheet, Optional ByRef 
             
             'counter.Item("counter") = counter.Item("counter") + (counter.Item("b1") And counter.Item("b2")) * -1
              
-            ' ÕÒµ½ÒÀÀµ¹ØÏµµÄ»°£¬ÔÙ´ÎÍùÏÂÕÒ£¨µİ¹é£©
+            ' æ‰¾åˆ°ä¾èµ–å…³ç³»çš„è¯ï¼Œå†æ¬¡å¾€ä¸‹æ‰¾ï¼ˆé€’å½’ï¼‰
             buildAdjaGraph CStr(o), ws, D, counter
         Next
         
@@ -901,33 +901,33 @@ End Function
 ' breadth first search - AdjacencyListGraph
 Public Function BFS(adjacencyList As Object, aHead As String) As Collection
 
-    ' bfsÓÃ¶ÓÁĞ£¬ÎªÕ¹Ê¾·½±ãÊ¹ÓÃµÄ¸¸½Úµã¶ÓÁĞ
+    ' bfsç”¨é˜Ÿåˆ—ï¼Œä¸ºå±•ç¤ºæ–¹ä¾¿ä½¿ç”¨çš„çˆ¶èŠ‚ç‚¹é˜Ÿåˆ—
     Dim queue As New Collection, pqueue As New Collection
     
     Dim tmpRs As New Collection, resultset As New Collection
     
 
-    ' ÁÙÊ±±äÁ¿
+    ' ä¸´æ—¶å˜é‡
     Dim head As Variant, phead As Variant, maxHeadLen As Byte, maxPHeadLen As Byte, o
     
-    '³õÊ¼»¯
+    'åˆå§‹åŒ–
     maxHeadLen = 0
     
     maxPHeadLen = 0
     
     '-- bfs(Breadth First Search)
-    queue.Add (aHead) ' ¶ÓÁĞ£¬ÓÃÒÔ±éÀúÁÚ½ÓÍ¼
-    pqueue.Add ("¡Ñ") ' ´æ·Å¸¸½Úµã
+    queue.Add (aHead) ' é˜Ÿåˆ—ï¼Œç”¨ä»¥éå†é‚»æ¥å›¾
+    pqueue.Add ("âŠ™") ' å­˜æ”¾çˆ¶èŠ‚ç‚¹
     
     Do While queue.Count > 0
     
-        ' È¡µÃ²¢É¾³ıÊ×½Úµã
+        ' å–å¾—å¹¶åˆ é™¤é¦–èŠ‚ç‚¹
         head = queue.Item(1)
         phead = pqueue.Item(1)
         queue.Remove (1)
         pqueue.Remove (1)
         
-        ' ³¤¶È×î´óÖµ±£´æÆğÀ´£¬ÓÃÒÔ¸ñÊ½»¯´òÓ¡
+        ' é•¿åº¦æœ€å¤§å€¼ä¿å­˜èµ·æ¥ï¼Œç”¨ä»¥æ ¼å¼åŒ–æ‰“å°
         If Len(phead) > maxPHeadLen Then
             maxPHeadLen = Len(phead)
         End If
@@ -939,7 +939,7 @@ Public Function BFS(adjacencyList As Object, aHead As String) As Collection
         'Debug.Print "[ " & phead & " -> " & head & " ]"
         'resultset.Add "[ " & phead & " -> " & head & " ]"
         
-        ' ·ÅÈë¼¯ºÏ
+        ' æ”¾å…¥é›†åˆ
         tmpRs.Add phead & "," & head
         '
         
@@ -950,16 +950,16 @@ Public Function BFS(adjacencyList As Object, aHead As String) As Collection
             
                 If adjacencyList.Item(head).Item(o) = BLANK Then
                 
-                    queue.Add (o)     ' ´æµ±Ç°½Úµã
-                    pqueue.Add (head) ' ´æ¶ÔÓ¦µÄ¸¸½Úµã
-                    adjacencyList.Item(head).Item(o) = "visited" ' ±êÊ¾ÎªÒÑ±éÀú
+                    queue.Add (o)     ' å­˜å½“å‰èŠ‚ç‚¹
+                    pqueue.Add (head) ' å­˜å¯¹åº”çš„çˆ¶èŠ‚ç‚¹
+                    adjacencyList.Item(head).Item(o) = "visited" ' æ ‡ç¤ºä¸ºå·²éå†
                     
                 End If
                
                 'If Not okList.exists(o) Then
-                '    queue.Add (o)     ' ´æµ±Ç°½Úµã
-                '    pqueue.Add (head) ' ´æ¶ÔÓ¦µÄ¸¸½Ú
-                '    okList.Add o, "visited"  ' ±êÊ¾ÎªÒÑ±éÀú
+                '    queue.Add (o)     ' å­˜å½“å‰èŠ‚ç‚¹
+                '    pqueue.Add (head) ' å­˜å¯¹åº”çš„çˆ¶èŠ‚
+                '    okList.Add o, "visited"  ' æ ‡ç¤ºä¸ºå·²éå†
                 'End If
                 
             Next
@@ -967,7 +967,7 @@ Public Function BFS(adjacencyList As Object, aHead As String) As Collection
 
     Loop
     
-    ' ×¢ÊÍĞÅÏ¢£¨head£©
+    ' æ³¨é‡Šä¿¡æ¯ï¼ˆheadï¼‰
     resultset.Add WorksheetFunction.Rept("=", maxPHeadLen) & " adjacency - list - bfs " & WorksheetFunction.Rept("=", maxHeadLen)
     resultset.Add BLANK
     For Each o In tmpRs
@@ -986,7 +986,7 @@ Public Function BFS(adjacencyList As Object, aHead As String) As Collection
     
     Next
     
-    ' ×¢ÊÍĞÅÏ¢£¨rear£©
+    ' æ³¨é‡Šä¿¡æ¯ï¼ˆrearï¼‰
     resultset.Add BLANK
     resultset.Add WorksheetFunction.Rept("=", maxPHeadLen) & " adjacency - list - bfs " & WorksheetFunction.Rept("=", maxHeadLen)
     
@@ -994,8 +994,8 @@ Public Function BFS(adjacencyList As Object, aHead As String) As Collection
     
 End Function
 
-' ÉÏ´«µ½azkaban web server
-' ÏîÄ¿Ãû³Æ£¬web ipµØÖ·£¬ÓÃ»§Ãû£¬ÃÜÂë£¬ÒªÉÏ´«µÄzipÎÄ¼şÃû(¾ø¶ÔÂ·¾¶)£¬£¨curlµØÖ·£¬¹¤×÷Ä¿Â¼  ==> ÔİÊ±²»ÓÃ£©
+' ä¸Šä¼ åˆ°azkaban web server
+' é¡¹ç›®åç§°ï¼Œweb ipåœ°å€ï¼Œç”¨æˆ·åï¼Œå¯†ç ï¼Œè¦ä¸Šä¼ çš„zipæ–‡ä»¶å(ç»å¯¹è·¯å¾„)ï¼Œï¼ˆcurlåœ°å€ï¼Œå·¥ä½œç›®å½•  ==> æš‚æ—¶ä¸ç”¨ï¼‰
 Public Sub upload2web(meta As UploadMeta)
                                             
    Dim WSH As Object, wExec As Object, result
@@ -1019,17 +1019,17 @@ Public Sub upload2web(meta As UploadMeta)
    
 
    
-    ' Ê¹ÓÃwscript¶ÔÏó½øĞĞÍâ¶Èµ÷ÓÃ
+    ' ä½¿ç”¨wscriptå¯¹è±¡è¿›è¡Œå¤–åº¦è°ƒç”¨
     Set WSH = CreateObject("WScript.Shell")
     
     Debug.Print antiParametrization(gensessionCURL, params)
     
-    ' ¿ªÊ¼²úÉúsessionid´¦Àí
+    ' å¼€å§‹äº§ç”Ÿsessionidå¤„ç†
     Set wExec = WSH.Exec("cmd /c " & antiParametrization(gensessionCURL, params))
     
     result = wExec.StdOut.ReadAll
     
-    ' ½âÎö½á¹û
+    ' è§£æç»“æœ
     Set json = JsonConverter.ParseJson(CStr(result))
     
     errmsg = json("error")
@@ -1041,10 +1041,10 @@ Public Sub upload2web(meta As UploadMeta)
     
     params.Add "sessionid", json("session.id")
     
-    ' ¿ªÊ¼ÉÏ´«
+    ' å¼€å§‹ä¸Šä¼ 
     Set wExec = WSH.Exec("cmd /c " & antiParametrization(uploadCURL, params))
 
-    ' ÉÏ´«½áÊø
+    ' ä¸Šä¼ ç»“æŸ
     result = wExec.StdOut.ReadAll
     
     
@@ -1057,7 +1057,7 @@ Public Sub upload2web(meta As UploadMeta)
 
 End Sub
 
-' ·´²ÎÊı»¯
+' åå‚æ•°åŒ–
 Public Function antiParametrization(ByRef pstr As String, ByRef D As Dictionary) As String
 
     Dim s As String
@@ -1104,7 +1104,7 @@ Public Function rpad(t As String, pad As String, Optional lens As Byte = 50) As 
     rpad = t & WorksheetFunction.Rept(pad, lens - 1 - VBA.Len(t)) & "|"
 End Function
 
-' È¡µÃ"/"·Ö¸ôµÄ×Ö·û´®ÖĞ£¬×î´óµÄÖµ
+' å–å¾—"/"åˆ†éš”çš„å­—ç¬¦ä¸²ä¸­ï¼Œæœ€å¤§çš„å€¼
 Public Function maxLevel(vtar As String, Optional delim As String = "/") As Integer
 
     Dim tarArr() As String, vmax As Integer
@@ -1126,7 +1126,7 @@ Public Function getFileList(s As String) As Collection
 
     Dim a As New Collection
     
-    ' È·±£ÒÔ\½á¹û
+    ' ç¡®ä¿ä»¥\ç»“æœ
     mypath = SWITCH(Right(s, 1) <> "\", s & "\", Right(s, 1) = "\", s)
     
     myname = DIR(mypath, VBA.vbDirectory)
@@ -1148,3 +1148,44 @@ Public Function getFileList(s As String) As Collection
     
 End Function
 
+' é™¤å»commentï¼Œè¿™ä¸ªä¸ºäº†é€‚åº”hiveï¼ˆhiveä¸æ”¯æŒ/* */ç±»å‹çš„commentï¼‰
+Public Function removeAssignedComment(ByRef v As String, Optional CommentStyle As String = "/*")
+
+    Dim t As String
+    Dim c_posl As Long, c_posr As Long
+    Dim s_left As String, s_right As String
+    
+    t = v
+    
+    ' åˆå§‹åŒ–ä½ç½®
+    c_posl = InStr(1, t, "/*")
+    c_posr = InStr(1, t, "*/")
+    
+    Do While c_posl > 0 And c_posr > 0
+        
+        s_left = VBA.Left(t, c_posl - 1)
+        
+        s_right = VBA.Right(t, VBA.Len(t) - c_posr - 1)
+        
+        t = s_left & rpad(" ", " ", c_posr + 2 - c_posl) + s_right
+        
+        '"a/* abc */b" => l = 2, r = 9 r - l =
+        c_posl = VBA.InStr(1, t, "/*")
+        c_posr = VBA.InStr(1, t, "*/")
+        
+    Loop
+    
+    removeAssignedComment = t
+    
+End Function
+
+Public Function addToDict(d As Dictionary, k As String, v As String) As Boolean
+
+    If Not d.Exists(k) Then
+        d.Add k, v
+        addToDict = True
+    Else
+        addToDict = False
+    End If
+    
+End Function
