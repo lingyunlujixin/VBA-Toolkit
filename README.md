@@ -1,5 +1,4 @@
-"# summit" 
-
+ 
 -- 2016/04/14 Add By Lujx
 
 * 该项目下有三个小功能，存放位置及说明如下：
@@ -17,10 +16,14 @@
   3> vba/fmt
   
      一些其他的小技巧。
-  
-* 另，该项目引用了3个第三方VBA包（git位置：https://github.com/VBA-tools），为适应日志处理需求，对其中Logger.bas做了更改。
 
-* 第三方VBA包放在了vba/thirdparty/下，今后如再有其他引用，亦打算放在该位置下，不再特别说明。
+* 特别说明：
 
-* 如有必要，请用上述的git地址获取最新版本的第三方VBA包，本项目难保同步更新。
+  1 通用库（CommonUtil、CommonConst、FileOperation）在vba/目录下。
+
+  2 项目引用了3个第三方VBA包（git位置： https://github.com/VBA-tools ），为适应日志处理需求，对其中Logger.bas做了更改。
+
+    ※第三方VBA包放在了vba/thirdparty/下，今后如再有其他引用，亦打算放在该位置下，不再特别说明。
+
+    ※如有必要，请用上述的git地址获取最新版本的第三方VBA包，本项目难保同步更新。
 
